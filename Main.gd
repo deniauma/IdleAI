@@ -11,4 +11,5 @@ func _ready():
 
 func _process(delta):
 	$VBoxContainer2/TotalMoney.text = "Total money: " + str(stepify(GameManager.total_money, 0.01)) + " $"
+	$VBoxContainer2/ProcessingPower.text = "Processing power: " + str(GameManager.process_power)
 	pass
