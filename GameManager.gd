@@ -6,6 +6,7 @@ extends Node
 var total_money = 5.0
 var money_per_sec = 1.0
 var process_power = 0.0
+var skills = []
 
 func _ready():
 	# Called when the node is added to the scene for the first time.

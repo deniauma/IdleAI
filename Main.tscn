@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://PCbutton.gd" type="Script" id=2]
 [ext_resource path="res://IdleButton.gd" type="Script" id=3]
+[ext_resource path="res://MoneyButton.gd" type="Script" id=4]
+[ext_resource path="res://SkillButton.gd" type="Script" id=5]
 
 [node name="Game" type="Control" index="0"]
 
@@ -88,6 +90,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 4.0
 margin_top = 101.0
 margin_right = 216.0
 margin_bottom = 600.0
@@ -106,7 +109,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 216.0
+margin_right = 212.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -162,7 +165,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Margin", "custom_constants" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PCbutton/MarginContainer" index="0"]
 
@@ -231,7 +234,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 44.0
-margin_right = 216.0
+margin_right = 212.0
 margin_bottom = 84.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -355,9 +358,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 806.0
+margin_left = 807.0
 margin_top = 101.0
-margin_right = 1022.0
+margin_right = 1018.0
 margin_bottom = 601.0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -369,13 +372,13 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Button" type="Button" parent="VBoxContainer3" index="0"]
+[node name="MoneyButton" type="Button" parent="VBoxContainer3" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 216.0
+margin_right = 211.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -392,6 +395,63 @@ group = null
 text = "Mine Bitcoins"
 flat = false
 align = 1
+script = ExtResource( 4 )
 _sections_unfolded = [ "Rect" ]
+skill_to_unlock = 1
+money_per_sec = 5
+unlocked = false
+
+[node name="SkillButton" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 393.0
+margin_top = 120.0
+margin_right = 601.0
+margin_bottom = 152.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Learn how to mine Bitcoins"
+flat = false
+align = 1
+script = ExtResource( 5 )
+skill_id = 1
+cp_to_unlock = 10
+cp_to_learn = 100
+
+[node name="ProgressBar" type="ProgressBar" parent="SkillButton" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 40.0
+margin_right = 208.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 40.0
+exp_edit = false
+rounded = false
+percent_visible = true
 
 
